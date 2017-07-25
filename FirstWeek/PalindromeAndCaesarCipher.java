@@ -14,7 +14,7 @@ Language: Java
 normal: 123 -> 123 + 321 = 444 ture
 single number: 9 -> 9 + 9 = 18; 18 + 81 = 99 true
 negative number: -10 not palindrome false
-large number: 999,999 -> 999,999 + 999,999 exceed 1,000,000, false
+large number: 999,999, true
 
 2. Pseudocode 
 2.1 Brute Force way (recursion)
@@ -130,7 +130,7 @@ public class Solution{
 	public String caesarCipher(String text) {
 		if (text == null) return null;
 
-		String[] strs = text.split(";");
+		String[] strs = text.split(":");
 		int shift = Integer.parseInt(strs[0]);
 		StringBuilder encrypted =  new StringBuilder();
 
@@ -187,6 +187,7 @@ public class Solution{
 		 assertEquals("09",caesarCipher("10:09")); //digits
 		 assertEquals("98",caesarCipher("99:09")); //digits shift more than 10
 		 assertEquals("fg,e31 qr;2",caesarCipher("2:de,c19 op;0")); //digits + letters and other symbols
+		 assertEquals("st,r20 de;1",caesarCipher("-89:de,c19 op;0")); //digits 
 		 
 	}
 }
