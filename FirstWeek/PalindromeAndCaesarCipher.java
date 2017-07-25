@@ -1,5 +1,5 @@
 /*
-MICP Summber 2017
+MICP Summer 2017
 Author: Xinyi(Cindy) Chen
 Email: xinyi.chencareer@gmail.com
 Language: Java
