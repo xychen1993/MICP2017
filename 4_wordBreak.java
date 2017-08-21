@@ -63,22 +63,25 @@ null					/									false
 "aa"					{a, b}								true 				[t,t,t]
 */	
 public class Solution {
-	public boolean wordBreak(String str, Set<String> dictionary) {
-		if (str == null || dictionary == null) {
+	public boolean wordBreak(String s, List<String> wordDict) {
+        if (s == null || wordDict == null) {
 			return false;
 		}
-		boolean[] dp = new boolean[str.length() + 1];
+		boolean[] dp = new boolean[s.length() + 1];
 		dp[0] = true;
-		for (int i = 0; i < str.length(); i++) {
-			for (int j = i + 1; j <= str.length(); j++) {
-				String substring = str.substring(i, j);
-				if (dictionary.contains(substring)) {
-					dp[j] = dp[i];
-				}
-			}
-		}
-		return dp[str.length()];
-	}
+        /*尾循环在外面是因为其实是在检测每一位当做尾巴的时候是不是true*/
+        for (int end = 1; end <= s.length(); end++) {
+            for (int start = 0; start < end; start++) {
+                String substr = s.substring(start, end);
+                if (dp[start] && wordDict.contains(substr)) {
+                    dp[end] = true; 
+                    break;
+                }
+            }
+        }
+		
+		return dp[s.length()];
+    }
 	@Test
 		public static void testWordBreak() {
 			assertEquals(false,wordBreak(null, new HashSet<String>(Arrays.asList("pear", "salmon", "foot", "prints", "footprints", "leave", "you", "sun", "girl", "enjoy" ))));
