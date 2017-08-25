@@ -32,6 +32,8 @@ Space complexity: O(N)
 	2. We reverse the first half part of given linked list;
 	2. Start from both head and middle to iterate given linked list, compare the value of head and middle, if they are always the same, then given linked list is a palindrome.
 	3. Attached is an image to illustrate this idea.
+Time complexity: O(N)
+Space complexity: O(1)
 
 5. Walk Through
 During the walk throught process, I found out that odd/even number of nodes have different middle nodes, we should take care of it.
