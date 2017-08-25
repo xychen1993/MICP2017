@@ -41,7 +41,7 @@ During the walk throught process, I found out that odd/even number of nodes have
 6. Implementation and Test
 See the following unannotated code;
 */
-class Solution {
+public class Solution {
     public boolean isPalindrome(ListNode head) {
         if (head == null) {
             return true;
