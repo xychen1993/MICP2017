@@ -196,8 +196,6 @@ public class SuperVendingMachine {
 		return true;
 	}
 
-	public int 
-
 	public void addStock(Item item) {
 		String itemId = item.id;
 		if (stock.containsKey(itemId)) {
