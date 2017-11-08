@@ -1,9 +1,3 @@
 TEBOW IT
 
-Talk
-Example,
-Brute Force
-Optimize,
-Walk Through,
-Implement
-Test
+Talk -> Example -> Brute Force -> Optimize -> Walk Through -> Implement -> Test
